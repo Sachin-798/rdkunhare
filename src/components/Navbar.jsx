@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { IoSearchOutline } from "react-icons/io5";
 import logo from "../assets/Images/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // 🔽 Services dropdown states
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [servicesHover, setServicesHover] = useState(false);
+  const servicesRef = useRef(null);
+
+  const showServices = servicesOpen || servicesHover;
+
+  // close services dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const menuStyle = "font-medium text-[15px] leading-[30px] tracking-wide";
 
@@ -20,21 +39,15 @@ const Navbar = () => {
     <>
       {/* MOBILE TOP BAR */}
       <div className="w-full bg-black text-white py-2 px-5 flex justify-end items-center space-x-5 lg:hidden">
-        <a href="#" className="text-white text-lg">
-          <FaFacebookF />
-        </a>
-        <a href="#" className="text-white text-lg">
-          <FaInstagram />
-        </a>
-        <a href="#" className="text-white text-lg">
-          <FaLinkedinIn />
-        </a>
+        <FaFacebookF />
+        <FaInstagram />
+        <FaLinkedinIn />
       </div>
 
       <nav className="w-full bg-white text-black shadow-md lg:bg-black lg:text-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-35">
-            
+
             {/* LOGO */}
             <Link to="/" className="flex items-center space-x-3">
               <img src={logo} alt="Kunhare Logo" className="h-30 w-auto object-contain" />
@@ -42,94 +55,132 @@ const Navbar = () => {
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center space-x-10 uppercase">
-              <NavLink to="/" className={`${menuStyle} text-white hover:text-gray-300`}>
+              <NavLink to="/" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 Home
               </NavLink>
 
-              <NavLink to="/about" className={`${menuStyle} text-white hover:text-gray-300`}>
+              <NavLink to="/about" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 About Us
               </NavLink>
 
               {/* SERVICES DROPDOWN */}
-              <div className="relative group">
-                <button className={`inline-flex items-center gap-1 ${menuStyle} text-white hover:text-gray-300`}>
-                  <span>Services</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 
-                    10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 
-                    4.24a.75.75 0 01-1.06 0L5.21 
-                    8.29a.75.75 0 01.02-1.08z" clipRule="evenodd" />
+              <div
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={() => setServicesHover(true)}
+                onMouseLeave={() => setServicesHover(false)}
+              >
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className={`inline-flex items-center gap-1 ${menuStyle} text-[18px] text-white hover:text-[#cb9d54] transition-colors duration-300`}
+
+                >
+                  Services
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-5 w-5 transition-transform duration-300 ${showServices ? "rotate-180" : ""
+                      }`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </button>
 
-                <div className="absolute left-0 mt-3 w-64 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 
-                                scale-95 transform origin-top transition-all duration-150 ease-out 
-                                group-hover:opacity-100 group-hover:scale-100 pointer-events-none 
-                                group-hover:pointer-events-auto z-30">
-
+                {/* DROPDOWN */}
+                <div
+                  className={`
+      absolute left-0 mt-3 w-64 bg-white border border-gray-200
+      rounded-md shadow-lg z-50
+      transform origin-top transition-all duration-200 ease-out
+      normal-case
+      ${showServices
+                      ? "opacity-100 scale-100 pointer-events-auto"
+                      : "opacity-0 scale-95 pointer-events-none"
+                    }
+    `}
+                >
                   {[
-                    "Architecture Design",
-                    "Interior Design",
-                    "Building & Construction",
-                    "Structure Design",
-                    "Property Management",
-                    "Map Sanction",
-                    "Vastu",
+                    { label: "Architecture Design", path: "/services/architecture-design" },
+                    { label: "Interior Design", path: "/services/interior-design" },
+                    { label: "Building & Construction", path: "/services/building-construction" },
+                    { label: "Structure Design", path: "/services/structure-design" },
+                    { label: "Property Management", path: "/services/property-management" },
+                    { label: "Map Sanction", path: "/services/map-sanction" },
+                    { label: "Vastu", path: "/services/vastu" },
                   ].map((item) => (
                     <Link
-                      key={item}
-                      to="/services"
-                      className="block px-5 py-2.5 text-[15px] leading-[30px] font-medium
-                                 text-gray-700 hover:bg-gray-100 border-b border-gray-200 last:border-b-0"
+                      key={item.label}
+                      to={item.path}
+                      className="
+          block px-5 py-2.5
+          text-[15px] leading-[30px] font-medium
+          text-gray-700 hover:bg-gray-100
+          border-b border-gray-200 last:border-b-0
+          normal-case
+        "
+                      onClick={() => setServicesOpen(false)}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   ))}
                 </div>
               </div>
 
-              <NavLink to="/gallery" className={`${menuStyle} text-white hover:text-gray-300`}>
+
+              <NavLink to="/gallery" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 Gallery
               </NavLink>
 
-              <NavLink to="/careers" className={`${menuStyle} text-white hover:text-gray-300`}>
+              <NavLink to="/careers" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 Careers
               </NavLink>
 
-              <NavLink to="/blog" className={`${menuStyle} text-white hover:text-gray-300`}>
+              <NavLink to="/blog" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 Blog
               </NavLink>
 
-              <NavLink to="/contact" className={`${menuStyle} text-white hover:text-gray-300`}>
+              <NavLink to="/contact" className={`${menuStyle} text-white hover:text-[#cb9d54]`}>
                 Contact Us
               </NavLink>
             </div>
 
-            {/* SEARCH BAR (DESKTOP) */}
+            {/* SEARCH DESKTOP */}
             <div className="hidden lg:flex items-center">
               <form
                 onSubmit={handleSearchSubmit}
-                className={`flex items-center rounded-full px-2 py-1 transition-all duration-300 ease-out border 
-                    ${searchOpen ? "border-gray-400 bg-white" : "border-transparent bg-transparent"}`}
+                className={`flex items-center rounded-full px-2 py-1 border transition-all duration-300
+      ${searchOpen ? "border-gray-400 bg-white" : "border-transparent"}`}
               >
                 <input
-                  type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className={`bg-transparent outline-none text-sm text-black placeholder-gray-500 transition-all duration-300 ease-out 
-                      ${searchOpen ? "w-40 opacity-100 ml-2" : "w-0 opacity-0"}`}
+                  className={`outline-none text-sm text-black placeholder-gray-500 transition-all duration-300
+        ${searchOpen ? "w-40 ml-2 opacity-100" : "w-0 opacity-0"}`}
                 />
 
                 <button
                   type="button"
                   onClick={() => setSearchOpen(!searchOpen)}
-                  className={`p-1 transition-colors duration-300 
-                      ${searchOpen ? "text-black" : "text-white hover:text-gray-300"}`}
+                  className={`
+        p-2 rounded-full transition-all duration-300
+        ${searchOpen ? "text-black hover:bg-gray-100" : "text-white hover:text-[#cb9d54]"}
+      `}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7"
-                    fill="none" stroke="currentColor" strokeWidth="2"
-                    strokeLinecap="round" strokeLinejoin="round">
+                  {/* SEARCH ICON */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <circle cx="11" cy="11" r="7" />
                     <line x1="16.65" y1="16.65" x2="21" y2="21" />
                   </svg>
@@ -137,19 +188,10 @@ const Navbar = () => {
               </form>
             </div>
 
+
             {/* MOBILE HAMBURGER */}
-            <button onClick={() => setOpen(!open)} className="lg:hidden p-2">
-              {open ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+            <button onClick={() => setOpen(!open)} className="lg:hidden text-4xl ">
+              {open ? "✕" : "☰"}
             </button>
 
           </div>
@@ -157,22 +199,8 @@ const Navbar = () => {
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="lg:hidden border-t border-gray-200 bg-white">
-            <div className="max-w-7xl mx-auto px-4 pt-3 pb-4 space-y-2 uppercase">
-
-              <form
-                onSubmit={handleSearchSubmit}
-                className="flex items-center border border-gray-300 rounded-full px-3 py-1 mb-3"
-              >
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full outline-none text-black text-sm bg-transparent"
-                />
-              </form>
-
+          <div className="lg:hidden bg-white border-t">
+            <div className="px-4 py-3 space-y-2 uppercase">
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
@@ -185,7 +213,7 @@ const Navbar = () => {
                 <Link
                   key={item.label}
                   to={item.to}
-                  className={`${menuStyle} text-black block`}
+                  className={`${menuStyle} block text-black`}
                   onClick={() => setOpen(false)}
                 >
                   {item.label}

@@ -1,4 +1,5 @@
 import HouseGallery from "../components/HouseGallery";
+import VideoGallery from "../components/VideoGallery"
 
 const Gallery = () => {
   return (
@@ -18,6 +19,7 @@ const Gallery = () => {
       </div>
     </section>
     <HouseGallery/>
+    <VideoGallery/>
     </>
   );
 };

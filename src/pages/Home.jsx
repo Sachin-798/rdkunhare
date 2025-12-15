@@ -1,5 +1,9 @@
 import ContactWithMap from "../components/ContactWithMap";
+import HowWeWork from "../components/HowWeWork";
+import RecentPost from "../components/Recentpost";
 
+import RedesignDream from "../components/RedesignDream"
+import WhyWeAreDifferent from "../components/WhyWeAreDifferent"
 const Home = () => {
   return (
     <>
@@ -9,6 +13,12 @@ const Home = () => {
         This is the home page. Add your hero section, highlights and call to actions here.
       </p>
     </main>
+    <WhyWeAreDifferent/>
+
+    <RedesignDream/>
+    <HowWeWork/>
+   
+    <RecentPost/>
     <ContactWithMap/>
     </>
   );

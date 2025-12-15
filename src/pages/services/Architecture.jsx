@@ -1,0 +1,31 @@
+import React from "react";
+import ServiceLayout from "../../components/ServiceLayout";
+import ArchitectureSection from "../../components/ArchitectureSection"
+import DesigningSection from "../../components/DesigningSection"
+
+const Architecture = () => {
+  return (
+    <>
+          <section className="w-full bg-black text-white h-40 sm:h-52 md:h-64 lg:h-65 flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
+        {/* Main heading */}
+      <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase">
+ Architecture Design
+</h1>
+
+
+        {/* Breadcrumb */}
+        <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
+          Home/ Services/ Architecture Design
+        </p>
+      </div>
+    </section>
+      
+    <ArchitectureSection/>
+      <DesigningSection/>
+   
+    </>
+  );
+};
+
+export default Architecture;

@@ -20,27 +20,27 @@ const Footer = () => {
                         </p>
                     </div>
 
-                 <div className="flex flex-col items-start group">
-  <a
-    href="#"
-    className="inline-block text-xs md:text-sm font-semibold uppercase bg-white text-black 
+                    <div className="flex flex-col items-start group">
+                        <a
+                            href="#"
+                            className="inline-block text-xs md:text-sm font-semibold uppercase bg-white text-black 
       px-6 md:px-8 py-3 md:py-4 rounded-sm shadow-sm transition-all duration-300
       group-hover:bg-[#cb9d54] group-hover:text-white"
-    style={{ letterSpacing: "1px" }}
-    aria-label="Learn more about Kunhare"
-  >
-    LEARN MORE
-  </a>
+                            style={{ letterSpacing: "1px" }}
+                            aria-label="Learn more about Kunhare"
+                        >
+                            LEARN MORE
+                        </a>
 
-  {/* Underline below button */}
-  <div className="mt-1 w-full">
-    <div className="w-40 h-[2px] bg-gray-400/60 transition-all duration-300 group-hover:bg-[#cb9d54]" />
-  </div>
-</div>
+                        {/* Underline below button */}
+                        <div className="mt-1 w-full">
+                            <div className="w-40 h-[2px] bg-gray-400/60 transition-all duration-300 group-hover:bg-[#cb9d54]" />
+                        </div>
+                    </div>
 
                 </div>
             </div>
-            <hr/>
+            <hr />
 
             {/* MAIN FOOTER (background image + content) */}
             <div className="footer-bg footer-stripes w-full">

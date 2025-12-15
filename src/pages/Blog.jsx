@@ -1,5 +1,9 @@
+import RecentPost from "../components/Recentpost";
+
 const Blog = () => {
   return (
+    <>
+   
       <section className="w-full bg-black text-white h-40 sm:h-52 md:h-64 lg:h-65 flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
         {/* Main heading */}
@@ -14,6 +18,8 @@ const Blog = () => {
         </p>
       </div>
     </section>
+    <RecentPost/>
+     </>
   );
 };
 
