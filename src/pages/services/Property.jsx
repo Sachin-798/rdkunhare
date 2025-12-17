@@ -1,56 +1,49 @@
 import React from "react";
-import ServiceLayout from "../../components/ServiceLayout";
+import Property_in from "../../components/Property_in";
+
+
+import Property_de from "../../components/property_de"
+import { Link } from "react-router-dom";
+
 const Property = () => {
   return (
     <>
-      {/* MAIN SERVICE LAYOUT */}
-      <ServiceLayout
-        title="Property Management"
-        description="End-to-end property management solutions designed to maintain property value, ensure smooth operations, and deliver peace of mind to owners."
-      />
+      <section className="w-full bg-black text-white h-40 sm:h-52 md:h-64 lg:h-65 flex items-center justify-center">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
+          {/* Main heading */}
+          <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase">
 
-      {/* EXTRA CONTENT SECTION */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+            Property Management
+          </h1>
 
-          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-            Our Property Management Services
-          </h2>
+          {/* Breadcrumb */}
+          <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
+            <Link to="/" className="hover:text-[#cb9d54] transition">
+              Home
+            </Link>
 
-          <div className="grid gap-8 md:grid-cols-3">
+            <span className="mx-1">/</span>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Maintenance & Repairs
-              </h3>
-              <p className="text-gray-600 leading-7">
-                Regular maintenance and quick repair services to keep properties in excellent condition.
-              </p>
-            </div>
+            <Link to="/services" className="hover:text-[#cb9d54] transition">
+              Services
+            </Link>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Tenant Management
-              </h3>
-              <p className="text-gray-600 leading-7">
-                Efficient handling of tenant needs, agreements, and communication for smooth operations.
-              </p>
-            </div>
+            <span className="mx-1">/</span>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Value Optimization
-              </h3>
-              <p className="text-gray-600 leading-7">
-                Strategic planning and management to maximize returns and long-term property value.
-              </p>
-            </div>
+            <Link
+              to="/services/property-management"
+              className="text-white cursor-default"
+            >
+              Property Management
+            </Link>
+          </p>
 
-          </div>
         </div>
       </section>
+      <Property_in />
+      <Property_de />
     </>
   );
 };
 
-export default Property;
+export default Property

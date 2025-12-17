@@ -1,7 +1,10 @@
 import React from "react";
-import ServiceLayout from "../../components/ServiceLayout";
+
 import ArchitectureSection from "../../components/ArchitectureSection"
 import DesigningSection from "../../components/DesigningSection"
+import { Link } from "react-router-dom";
+
+
 
 const Architecture = () => {
   return (
@@ -15,9 +18,27 @@ const Architecture = () => {
 
 
         {/* Breadcrumb */}
-        <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
-          Home/ Services/ Architecture Design
-        </p>
+       <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
+  <Link to="/" className="hover:text-[#cb9d54] transition">
+    Home
+  </Link>
+
+  <span className="mx-1">/</span>
+
+  <Link to="/services" className="hover:text-[#cb9d54] transition">
+    Services
+  </Link>
+
+  <span className="mx-1">/</span>
+
+  <Link
+    to="/services/architecture-design"
+    className="text-white cursor-default"
+  >
+    Architecture Design
+  </Link>
+</p>
+
       </div>
     </section>
       

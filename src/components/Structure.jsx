@@ -1,7 +1,7 @@
 import React from "react";
 import Architecture01 from "../assets/Images/Architecture01.jpg";
 
-const InteriorServices = () => {
+const Structure = () => {
     return (
         <section className="w-full bg-white py-12">
             <div className="max-w-7xl mx-auto px-4">
@@ -32,8 +32,7 @@ const InteriorServices = () => {
                                 +91-9826631470
                             </p>
 
-
-                                            {/* Button */}
+                 {/* Button */}
 <div className="mt-8 sm:mt-10 flex flex-col items-center sm:items-start group">
 
   <a
@@ -93,12 +92,14 @@ const InteriorServices = () => {
                     {/* RIGHT CONTENT */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                            Interior Design
+                           Structure Design
                         </h2>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                            House inside plan doesn’t mean moderate or straightforwardness. It can regardless be any sort of plan as long as it has the parts of advancement. RD kunhare is an awesome inside plan association, our understanding of the present-day inside plan is essential: it should be an excess house inside plan and a top inside plan in Indore. Configuration work portfolio gives everyone a view at her excess hands with anything luxury house inside plan; every system is overall around set and relative, and every task gives you a couple of knowledge about who and what each space is for. The plan is at the extreme front line of the new technique for lavishness inside plan and sorts of progress as the owner of the best inside plan association.
-                        </p>
+                            The life of any structure relies upon the underlying soundness and strength of the structure. the structure is the principal skeleton of any structure. We fortify the skeleton of your structure.
+<br/><br/>
+                  We do foundational layout so that you’re building will be reinforced enough according to the neighborhood site conditions and support however many years as you required.
+                         </p>
                     </div>
 
 
@@ -108,4 +109,4 @@ const InteriorServices = () => {
     );
 };
 
-export default InteriorServices;
+export default Structure;

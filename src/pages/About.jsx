@@ -2,6 +2,8 @@ import React from "react";
 import AboutSection from "../components/AboutSection";
 import FeaturesRow from "../components/FeaturesRow";
 import AboutPublic from "../components/AboutPublic";
+import { Link } from "react-router-dom";
+
 
 const About = () => {
   return (
@@ -16,8 +18,15 @@ const About = () => {
 
         {/* Breadcrumb */}
         <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
-          Home / About Us
-        </p>
+  <Link to="/" className="hover:text-[#cb9d54] transition">
+    Home
+  </Link>
+  <span className="mx-2">/</span>
+  <Link to="/about" className="hover:text-[#cb9d54] transition">
+    About Us
+  </Link>
+</p>
+
       </div>
     </section>
     <AboutSection/>

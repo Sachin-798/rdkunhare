@@ -20,11 +20,18 @@ import Structure from "./pages/services/Structure";
 import Property from "./pages/services/Property";
 import MapSanction from "./pages/services/MapSanction";
 import Vastu from "./pages/services/Vastu";
+import ScrollToTop from "./components/ScrollToTop"
+import FloatingContactButton from "./components/FloatingContactButton";
+
 
 function App() {
   return (
     <>
       <Navbar />
+      
+
+          <ScrollToTop />
+          <FloatingContactButton />
 
       {/* CONTENT AREA */}
       <Routes>

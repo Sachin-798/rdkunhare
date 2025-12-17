@@ -33,48 +33,84 @@ const ArchitectureSection = () => {
                             </p>
 
 
-                            <div className="flex flex-col items-start group">
+                            {/* Button */}
+                            <div className="mt-8 sm:mt-10 flex flex-col items-center sm:items-start group">
+
                                 <a
-                                    href="#"
-                                    className="inline-block text-xs md:text-sm font-semibold uppercase bg-white text-black 
-      px-6 md:px-8 py-3 md:py-4 rounded-sm shadow-sm transition-all duration-300
-      group-hover:bg-[#cb9d54] group-hover:text-white"
+                                    href="/contact"
+                                    className="
+      inline-block
+      text-xs sm:text-sm
+      font-semibold uppercase
+      bg-white text-black
+      px-6 sm:px-8
+      py-3 sm:py-4
+      rounded-sm
+      shadow-sm
+      transition-all duration-300
+
+      /* Desktop hover */
+      group-hover:bg-[#cb9d54]
+      group-hover:text-white
+
+      /* Mobile touch */
+      active:bg-[#cb9d54]
+      active:text-white
+      focus-visible:bg-[#cb9d54]
+      focus-visible:text-white
+    "
                                     style={{ letterSpacing: "1px" }}
-                                    aria-label="Learn more about Kunhare"
                                 >
                                     LEARN MORE
                                 </a>
 
-                                {/* Underline below button */}
-                                <div className="mt-1 w-full">
-                                    <div className="w-40 h-[2px] bg-gray-400/60 transition-all duration-300 group-hover:bg-[#cb9d54]" />
-                                </div>
+                                {/* Underline */}
+                                <div
+                                    className="
+      mt-2
+      w-32 sm:w-36 md:w-40     /* 👈 mobile width bada */
+      h-[2px]
+      bg-gray-400/60
+      transition-all duration-300 ease-in-out
+      origin-center
+
+      /* Desktop hover */
+      group-hover:bg-[#cb9d54]
+      group-hover:scale-x-110
+
+      /* Mobile touch */
+      active:bg-[#cb9d54]
+      active:scale-x-110
+      focus-visible:bg-[#cb9d54]
+      focus-visible:scale-x-110
+    "
+                                />
                             </div>
                         </div>
                     </div>
 
 
                     {/* RIGHT CONTENT */}
-              <div>
-  <h2 className="text-3xl md:text-4xl font-bold mb-5">
-    Architecture
-  </h2>
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-5">
+                            Architecture
+                        </h2>
 
-  <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-    RD Kunhare is the best modeler in Indore and gives re-appropriating
-    plans in the space of Architecture, Civil planning, Structural
-    Engineering, Estimation, and Quantity take off as well as MEP.
-  
-    RD Kunhare is a steady extension of our clients’ compositional and
-    planning arm in this way using the openness of significantly
-    capable, arranged organizers and experts in India and making
-    tremendous economies of scale, throughout a short period of time.
-    We coordinate with our clients, planning gatherings to cultivate
-    imaginative arrangement plans in an environment where the client
-    has all out liability regarding course of action from the
-    beginning.
-  </p>
-</div>
+                        <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                            RD Kunhare is the best modeler in Indore and gives re-appropriating
+                            plans in the space of Architecture, Civil planning, Structural
+                            Engineering, Estimation, and Quantity take off as well as MEP.
+
+                            RD Kunhare is a steady extension of our clients’ compositional and
+                            planning arm in this way using the openness of significantly
+                            capable, arranged organizers and experts in India and making
+                            tremendous economies of scale, throughout a short period of time.
+                            We coordinate with our clients, planning gatherings to cultivate
+                            imaginative arrangement plans in an environment where the client
+                            has all out liability regarding course of action from the
+                            beginning.
+                        </p>
+                    </div>
 
 
                 </div>

@@ -1,21 +1,32 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
-const ServicePage = () => {
-  const { slug } = useParams();
 
-  // Map slug to a title (optional)
-  const title = slug?.split("-").map(w => w[0].toUpperCase() + w.slice(1)).join(" ") || "Service";
+import ArchitectureSection from "../components/ArchitectureSection";
+import DesigningSection from "../components/DesigningSection";
 
+const ServicesPage = () => {
   return (
-    <div className="max-w-5xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-4">{title}</h1>
-      <p className="text-gray-600">
-        Ye {title} page ka placeholder content hai. Yahan aap apna detailed content, images,
-        portfolio items, contact CTA wagairah daal sakte ho.
-      </p>
-    </div>
+    <>
+          <section className="w-full bg-black text-white h-40 sm:h-52 md:h-64 lg:h-65 flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
+        {/* Main heading */}
+      <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase">
+ Architecture Design
+</h1>
+
+
+        {/* Breadcrumb */}
+        <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
+          Home/ Services/ Architecture Design
+        </p>
+      </div>
+    </section>
+      
+    <ArchitectureSection/>
+      <DesigningSection/>
+   
+    </>
   );
 };
 
-export default ServicePage;
+export default ServicesPage;

@@ -33,7 +33,7 @@ const InteriorServices = () => {
                             </p>
 
 
-                                            {/* Button */}
+                                         {/* Button */}
 <div className="mt-8 sm:mt-10 flex flex-col items-center sm:items-start group">
 
   <a
@@ -93,11 +93,11 @@ const InteriorServices = () => {
                     {/* RIGHT CONTENT */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                            Interior Design
+                            Building & Construction
                         </h2>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                            House inside plan doesn’t mean moderate or straightforwardness. It can regardless be any sort of plan as long as it has the parts of advancement. RD kunhare is an awesome inside plan association, our understanding of the present-day inside plan is essential: it should be an excess house inside plan and a top inside plan in Indore. Configuration work portfolio gives everyone a view at her excess hands with anything luxury house inside plan; every system is overall around set and relative, and every task gives you a couple of knowledge about who and what each space is for. The plan is at the extreme front line of the new technique for lavishness inside plan and sorts of progress as the owner of the best inside plan association.
+                            With regards to building frameworks and designs, we select what’s best for the building. Notwithstanding exemplary physical structures, we’ve conveyed probably the most mind-boggling modern development offices utilizing a scope of materials, innovations, and venture approach. By the day’s end, our offices need to perform so our clients can do what they specialize in. RD Kunhare joins the qualities and experience of the main with particular designing capacities for modern clients to create and drive an incorporated venture plan. The final product is dependably something very similar: A demonstrated, firm methodology that offers some benefit to clients and eventually works on cost, timetable, quality, and development consistency on each undertaking we convey.
                         </p>
                     </div>
 

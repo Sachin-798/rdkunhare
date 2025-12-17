@@ -1,7 +1,7 @@
 import React from "react";
 import Architecture01 from "../assets/Images/Architecture01.jpg";
 
-const InteriorServices = () => {
+const Vastu_se = () => {
     return (
         <section className="w-full bg-white py-12">
             <div className="max-w-7xl mx-auto px-4">
@@ -32,13 +32,12 @@ const InteriorServices = () => {
                                 +91-9826631470
                             </p>
 
+                            {/* Button */}
+                            <div className="mt-8 sm:mt-10 flex flex-col items-center sm:items-start group">
 
-                                            {/* Button */}
-<div className="mt-8 sm:mt-10 flex flex-col items-center sm:items-start group">
-
-  <a
-    href="/contact"
-    className="
+                                <a
+                                    href="/contact"
+                                    className="
       inline-block
       text-xs sm:text-sm
       font-semibold uppercase
@@ -59,14 +58,14 @@ const InteriorServices = () => {
       focus-visible:bg-[#cb9d54]
       focus-visible:text-white
     "
-    style={{ letterSpacing: "1px" }}
-  >
-    LEARN MORE
-  </a>
+                                    style={{ letterSpacing: "1px" }}
+                                >
+                                    LEARN MORE
+                                </a>
 
-  {/* Underline */}
-  <div
-    className="
+                                {/* Underline */}
+                                <div
+                                    className="
       mt-2
       w-32 sm:w-36 md:w-40     /* 👈 mobile width bada */
       h-[2px]
@@ -84,8 +83,8 @@ const InteriorServices = () => {
       focus-visible:bg-[#cb9d54]
       focus-visible:scale-x-110
     "
-  />
-</div>
+                                />
+                            </div>
                         </div>
                     </div>
 
@@ -93,11 +92,11 @@ const InteriorServices = () => {
                     {/* RIGHT CONTENT */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                            Interior Design
+                            Vastu
                         </h2>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                            House inside plan doesn’t mean moderate or straightforwardness. It can regardless be any sort of plan as long as it has the parts of advancement. RD kunhare is an awesome inside plan association, our understanding of the present-day inside plan is essential: it should be an excess house inside plan and a top inside plan in Indore. Configuration work portfolio gives everyone a view at her excess hands with anything luxury house inside plan; every system is overall around set and relative, and every task gives you a couple of knowledge about who and what each space is for. The plan is at the extreme front line of the new technique for lavishness inside plan and sorts of progress as the owner of the best inside plan association.
+                            We frequently get inquiries from our peruses connected with the correct heading for their homes, ideas for developing business structures, and Vastu tips for a serene and seriously satisfying life…. Indeed, to answer every one of your inquiries and to assist you with understanding this directional science better, we have concocted Vastu shastra. com-your one-stop reference book regarding the matter. Alongside Vastu, we have additionally covered subjects like Feng Shui and Chinese Astrology. The site offers total data on various subjects, for example, Chinese Birth Charts, Kua numbers, and such. Vaastu Shastra is an old building science that tracks down its beginnings in India. It directs the plan and development of structures with the assistance of basic and regular regulations that oversee the universe. The beginning of Vastu traces all the way back to right around 7000 years. Basically, Vastu Shastra gives data on what to remember while picking a land parcel and keeping in mind developing structures. In Sanskrit, the word Vastu signifies “site” or “house groundwork” and shastra means “science” or “educating.
                         </p>
                     </div>
 
@@ -108,4 +107,4 @@ const InteriorServices = () => {
     );
 };
 
-export default InteriorServices;
+export default Vastu_se;

@@ -59,25 +59,61 @@ export default function ContactWithMap() {
                     placeholder="Write message"
                     className="w-full px-4 py-3 bg-gray-100 focus:ring-2 focus:ring-gray-300 rounded-sm resize-y"
                   />
-                
 
-                  <div className="flex flex-col items-start group">
-                    <a
-                      href="#"
-                      className="inline-block text-xs md:text-sm font-semibold uppercase bg-black text-white 
-      px-6 md:px-8 py-3 md:py-4 rounded-sm shadow-sm transition-all duration-300
-      group-hover:bg-[#cb9d54] group-hover:text-white"
-                      style={{ letterSpacing: "1px" }}
-                      aria-label="Learn more about Kunhare"
-                    >
-                      SEND A MESSAGE
-                    </a>
 
-                    {/* Underline below button */}
-                    <div className="mt-1 w-full">
-                      <div className="w-48 h-[2px] bg-gray-400/60 transition-all duration-300 group-hover:bg-[#cb9d54]" />
-                    </div>
-                  </div>
+                 <div className="flex flex-col items-start group">
+  <a
+    href="#"
+    className="
+      inline-block
+      text-xs md:text-sm
+      font-semibold uppercase
+      bg-black text-white
+      px-6 md:px-8
+      py-3 md:py-4
+      rounded-sm
+      shadow-sm
+      transition-all duration-300
+
+      /* Desktop hover */
+      group-hover:bg-[#cb9d54]
+      group-hover:text-white
+
+      /* Mobile touch */
+      active:bg-[#cb9d54]
+      active:text-white
+      focus-visible:bg-[#cb9d54]
+      focus-visible:text-white
+    "
+    style={{ letterSpacing: '1px' }}
+  >
+    SEND A MESSAGE
+  </a>
+
+  {/* Underline */}
+  <div className="mt-1">
+    <div
+      className="
+        w-36 sm:w-40 md:w-48   /* 👈 mobile width thodi badi */
+        h-[2px]
+        bg-gray-400/60
+        transition-all duration-300 ease-in-out
+        origin-left
+
+        /* Desktop hover */
+        group-hover:bg-[#cb9d54]
+        group-hover:scale-x-110
+
+        /* Mobile touch */
+        active:bg-[#cb9d54]
+        active:scale-x-110
+        focus-visible:bg-[#cb9d54]
+        focus-visible:scale-x-110
+      "
+    />
+  </div>
+</div>
+
                 </form>
               </div>
             </div>

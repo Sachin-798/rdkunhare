@@ -1,55 +1,44 @@
 import React from "react";
-import ServiceLayout from "../../components/ServiceLayout";
+import ArchitectureShowcase from "../../components/ArchitectureShowcase"
+import { Link } from "react-router-dom";
+
 
 const MapSanction = () => {
   return (
     <>
-      {/* MAIN SERVICE LAYOUT */}
-      <ServiceLayout
-        title="Map Sanction"
-        description="We handle all approvals and map sanction processes smoothly with accurate documentation and complete compliance with local authorities."
-      />
+              <section className="w-full bg-black text-white h-40 sm:h-52 md:h-64 lg:h-65 flex items-center justify-center">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center">
+        {/* Main heading */}
+      <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] uppercase">
+ Map sanction
+</h1>
 
-      {/* EXTRA CONTENT SECTION */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+        {/* Breadcrumb */}
+      <p className="mt-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-gray-300">
+  <Link to="/" className="hover:text-[#cb9d54] transition">
+    Home
+  </Link>
 
-          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
-            Our Map Sanction Services
-          </h2>
+  <span className="mx-1">/</span>
 
-          <div className="grid gap-8 md:grid-cols-3">
+  <Link to="/services" className="hover:text-[#cb9d54] transition">
+    Services
+  </Link>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Legal Compliance
-              </h3>
-              <p className="text-gray-600 leading-7">
-                All drawings and documents are prepared as per government norms and regulations.
-              </p>
-            </div>
+  <span className="mx-1">/</span>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Documentation Support
-              </h3>
-              <p className="text-gray-600 leading-7">
-                Complete assistance with drawings, forms, and submissions for faster approvals.
-              </p>
-            </div>
+  <Link
+    to="/services/map-sanction"
+    className="text-white cursor-default"
+  >
+    Map Sanction
+  </Link>
+</p>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-lg font-semibold mb-3 text-[#cb9d54]">
-                Fast Approval Process
-              </h3>
-              <p className="text-gray-600 leading-7">
-                Efficient coordination with authorities to minimize delays and rework.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
+    <ArchitectureShowcase/>
+  
     </>
   );
 };
