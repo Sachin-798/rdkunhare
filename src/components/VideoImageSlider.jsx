@@ -2,20 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // 👉 Local Images
-import Slider01 from "../assets/Images/slider01.png";
-import Slider02 from "../assets/Images/slider02.png";
-import Slider03 from "../assets/Images/slider03.jpg";
-import Slider04 from "../assets/Images/slider04.jpg";
-import Slider05 from "../assets/Images/slider05.png";
-import Slider06 from "../assets/Images/slider06.png";
+import Slider01 from "../assets/Images/sliderimage01.jpeg";
+import Slider02 from "../assets/Images/sliderimage02.jpg";
+
 
 const slides = [
   { img: Slider01, lines: ["WE DESIGN", "YOUR", "DREAMS"] },
   { img: Slider02, lines: ["THE NEW", "FUTURE OF", "CONSTRUCTION"] },
-  { img: Slider03, lines: ["WE DESIGN", "YOUR", "DREAMS"] },
-  { img: Slider04, lines: ["WE DESIGN", "YOUR", "DREAMS"] },
-  { img: Slider05, lines: ["THE NEW", "FUTURE OF", "CONSTRUCTION"] },
-  { img: Slider06, lines: ["WE DESIGN", "YOUR", "DREAMS"] },
+
 ];
 
 const VideoImageSlider = () => {
@@ -38,15 +32,17 @@ const VideoImageSlider = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-black">
+    <div className="relative w-full overflow-hidden">
       {/* HEIGHT CONTROL */}
-      <div className="relative h-[45vh] sm:h-[55vh] md:h-[70vh] lg:h-[85vh] xl:h-[90vh]">
+      <div className="relative h-[28vh] sm:h-[60vh] md:h-[80vh] lg:h-[100vh] xl:h-[110vh]">
+
+
+
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              index === current ? "opacity-100 z-20" : "opacity-0 z-10"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100 z-20" : "opacity-0 z-10"
+              }`}
           >
             {/* IMAGE */}
             <img
@@ -71,52 +67,75 @@ const VideoImageSlider = () => {
                     <h1
                       key={i}
                       className="
-                        text-white font-extrabold uppercase
-                        text-2xl sm:text-3xl md:text-5xl lg:text-6xl
-                        leading-tight tracking-wide
-                        drop-shadow-xl
-                      "
+    text-white font-extrabold uppercase
+    text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl
+    leading-tight tracking-wider
+    drop-shadow-2xl
+  "
                     >
                       {line}
                     </h1>
+
                   ))}
                 </div>
 
-                {/* BUTTON */}
+                {/* Button */}
                 <div className="mt-8 sm:mt-10 inline-block group">
+
                   <Link
                     to="/"
                     className="
-                      inline-block
-                      text-xs sm:text-sm
-                      font-semibold uppercase
-                      bg-white text-black
-                      px-6 sm:px-8
-                      py-3 sm:py-4
-                      rounded-sm
-                      transition-colors duration-300
-                      group-hover:bg-[#cb9d54]
-                      group-hover:text-white
-                    "
+                  inline-block
+                  text-xs sm:text-sm
+                  font-semibold uppercase
+                  bg-white text-black
+                  px-6 sm:px-8
+                  py-3 sm:py-4
+                  rounded-sm
+                  shadow-sm
+                  transition-colors duration-300
+
+                  group-hover:bg-[#cb9d54]
+                  group-hover:text-white
+
+                  group-active:bg-[#cb9d54]
+                  group-active:text-white
+
+                  focus-visible:bg-[#cb9d54]
+                  focus-visible:text-white
+                "
                     style={{ letterSpacing: "1px" }}
                   >
                     LEARN MORE
                   </Link>
 
                   {/* UNDERLINE */}
-                  <div className="mt-2 w-30 h-[2px] bg-gray-400/60 relative overflow-hidden">
+                  <div
+                    className="
+                  mt-2
+                  w-32 sm:w-31 md:w-35 lg:w-39
+                  h-[2px]
+                  bg-gray-400/60
+                  relative
+                  overflow-hidden
+                "
+                  >
                     <span
                       className="
-                        absolute left-0 top-0
-                        h-full w-full
-                        bg-[#cb9d54]
-                        scale-x-0
-                        origin-left
-                        transition-transform duration-300
-                        group-hover:scale-x-100
-                      "
+                    absolute left-0 top-0
+                    h-full w-full
+                    bg-[#cb9d54]
+                    transform scale-x-0
+                    origin-left
+                    transition-transform duration-300
+
+                    group-hover:scale-x-100
+                    group-active:scale-x-100
+                    group-focus-visible:scale-x-100
+                  "
                     />
                   </div>
+
                 </div>
               </div>
             </div>

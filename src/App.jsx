@@ -19,6 +19,11 @@ import Property from "./pages/services/Property";
 import MapSanction from "./pages/services/MapSanction";
 import Vastu from "./pages/services/Vastu";
 
+import Renovation from "./pages/services/Renovation";
+import Consultation from "./pages/services/Consultation";
+import UrbanPlanning from "./pages/services/UrbanPlanning";
+
+
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingContactButton from "./components/FloatingContactButton";
 
@@ -59,6 +64,9 @@ function App() {
         <Route path="/services/property-management" element={<Property />} />
         <Route path="/services/map-sanction" element={<MapSanction />} />
         <Route path="/services/vastu" element={<Vastu />} />
+        <Route path="/services/renovation-remodeling" element={<Renovation />} />
+<Route path="/services/project-consultation" element={<Consultation />} />
+<Route path="/services/urban-planning" element={<UrbanPlanning />} />
 
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/careers" element={<Careers />} />

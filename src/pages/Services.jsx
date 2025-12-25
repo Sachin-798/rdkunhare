@@ -8,7 +8,12 @@ import {
   FaHome,
   FaMapMarkedAlt,
   FaYinYang,
+  FaTools,
+  FaClipboardCheck,
+  FaCity,
 } from "react-icons/fa";
+
+
 
 const services = [
   {
@@ -53,7 +58,28 @@ const services = [
     icon: <FaYinYang />,
     path: "/services/vastu",
   },
+
+  // 🔥 NEW SERVICES START HERE 🔥
+  {
+    title: "Renovation & Remodeling",
+    desc: "Upgrade and transform existing spaces with smart renovation solutions.",
+    icon: <FaTools />,
+    path: "/services/renovation-remodeling",
+  },
+  {
+    title: "Project Consultation",
+    desc: "Expert guidance and planning support for residential and commercial projects.",
+    icon: <FaClipboardCheck />,
+    path: "/services/project-consultation",
+  },
+  {
+    title: "Urban Planning",
+    desc: "Strategic planning and design for sustainable urban development.",
+    icon: <FaCity />,
+    path: "/services/urban-planning",
+  },
 ];
+
 
 const ServicesPage = () => {
   return (

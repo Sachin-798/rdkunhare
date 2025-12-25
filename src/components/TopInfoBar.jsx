@@ -1,11 +1,12 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
 
 const TopInfoBar = () => {
   return (
     <div className="w-full bg-white text-black border-b">
       <div className="max-w-7xl mx-auto px-3 lg:px-8">
-        
+
         {/* FORCE SINGLE ROW */}
         <div className="
           flex
@@ -29,7 +30,7 @@ const TopInfoBar = () => {
               <span className="text-sm">+91-9826631470</span>
             </a>
 
-            
+
 
             {/* EMAIL (HIDE ON VERY SMALL SCREEN) */}
             <a
@@ -80,6 +81,16 @@ const TopInfoBar = () => {
             >
               <FaLinkedinIn />
             </a>
+
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:text-[#cb9d54] transition-all duration-300 hover:scale-110"
+            >
+              <FaTwitter />
+            </a>
+
           </div>
 
         </div>
