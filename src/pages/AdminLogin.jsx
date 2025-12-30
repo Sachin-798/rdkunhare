@@ -13,37 +13,18 @@ const AdminLogin = () => {
     setError("");
 
     try {
-      // ✅ Laravel admin login API
       const res = await axiosInstance.post("/admin/login", {
         email,
         password,
       });
-
-      /**
-       * EXPECTED LARAVEL RESPONSE (example)
-       * {
-       *   "token": "xxxxx",
-       *   "admin": {
-       *     "id": 1,
-       *     "name": "Admin",
-       *     "email": "admin@gmail.com",
-       *     "role": "admin"
-       *   }
-       */
-
+      // ✅ Save token & admin
       localStorage.setItem("token", res.data.token);
-
-      // Laravel me aksar "admin" object hota hai
-      const adminUser = res.data.admin || res.data.user;
-
-      localStorage.setItem("user", JSON.stringify(adminUser));
+      localStorage.setItem("user", JSON.stringify(res.data.user));
 
       navigate("/admin/dashboard");
     } catch (err) {
       setError(
-        err.response?.data?.message ||
-          err.response?.data?.error ||
-          "Admin login failed"
+        err.response?.data?.message || "Invalid login credentials"
       );
     }
   };

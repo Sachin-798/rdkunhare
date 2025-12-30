@@ -1,13 +1,14 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api", // ✅ Laravel backend
+  baseURL: "http://localhost:8000/api",
   headers: {
     Accept: "application/json",
   },
+  withCredentials: true,
 });
 
-// Token auto attach
+// 🔐 Auto attach token
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

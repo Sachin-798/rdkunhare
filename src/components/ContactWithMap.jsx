@@ -1,7 +1,59 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function ContactWithMap() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    number: "", // <-- changed from phone
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setResponseMsg("");
+
+  try {
+    const res = await axios.post(
+      "http://localhost:8000/api/contact/send",
+      formData
+    );
+
+    setResponseMsg(res.data.message || "Message sent successfully!");
+    setFormData({ name: "", email: "", number: "", message: "" });
+
+    // Hide the success message after 4 seconds
+    setTimeout(() => {
+      setResponseMsg("");
+    }, 4000);
+
+  } catch (error) {
+    console.error(error);
+    setResponseMsg(
+      error.response?.data?.message || "Something went wrong. Try again."
+    );
+
+    // Hide the error message after 4 seconds
+    setTimeout(() => {
+      setResponseMsg("");
+    }, 4000);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
   return (
     <section className="py-12 bg-gray-100 w-full">
       <div className="max-w-7xl mx-auto px-4">
@@ -31,42 +83,52 @@ export default function ContactWithMap() {
                   CONTACT US
                 </h2>
 
-                <form
-                  className="space-y-4"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Form submitted");
-                  }}
-                >
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                       type="text"
+                      name="name"
                       placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-gray-100 focus:ring-2 focus:ring-gray-300 rounded-sm outline-none"
+                      required
                     />
                     <input
                       type="email"
+                      name="email"
                       placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-gray-100 focus:ring-2 focus:ring-gray-300 rounded-sm outline-none"
+                      required
                     />
                   </div>
 
                   <input
                     type="text"
+                    name="number" // <-- change from "phone" to "number"
                     placeholder="Phone Number"
+                    value={formData.number || ""}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-100 focus:ring-2 focus:ring-gray-300 rounded-sm outline-none"
                   />
 
                   <textarea
                     rows={5}
+                    name="message"
                     placeholder="Write message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-100 focus:ring-2 focus:ring-gray-300 rounded-sm resize-none outline-none"
+                    required
                   />
 
                   {/* BUTTON */}
                   <div className="mt-8 inline-block group">
                     <button
                       type="submit"
+                      disabled={loading}
                       className="
                         inline-block
                         text-xs sm:text-sm
@@ -77,13 +139,13 @@ export default function ContactWithMap() {
                         rounded-sm
                         shadow-sm
                         transition-colors duration-300
-
                         group-hover:bg-[#cb9d54]
                         group-hover:text-white
+                        disabled:opacity-50 disabled:cursor-not-allowed
                       "
                       style={{ letterSpacing: "1px" }}
                     >
-                      SEND A MESSAGE
+                      {loading ? "Sending..." : "SEND A MESSAGE"}
                     </button>
 
                     {/* UNDERLINE */}
@@ -108,10 +170,11 @@ export default function ContactWithMap() {
                       />
                     </div>
                   </div>
+
+                  {responseMsg && (
+                    <p className="mt-4 text-sm text-green-600">{responseMsg}</p>
+                  )}
                 </form>
-
-                
-
               </div>
             </div>
 

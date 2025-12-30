@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../utils/axiosInstance";
 
-// 🔁 Replace with your own video paths
-// import videoLeft from "../assets/Videos/kitchen.mp4";
-// import videoRight from "../assets/Videos/construction.mp4";
-import vedio01 from "../assets/Images/vedio01.mp4"
-import vedio02 from "../assets/Images/vedio02.mp4"
+const VideoGallery = () => {
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const RedesignDream = () => {
+  // Fetch videos from API
+  const fetchVideos = async () => {
+    try {
+      const res = await axiosInstance.get("/admin/videos");
+      // Assuming API returns { data: [{ id, video_url, title }, ...] }
+      setVideos(res.data.data || []);
+    } catch (error) {
+      console.error("Failed to fetch videos", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchVideos();
+  }, []);
+
   return (
     <section className="py-16 bg-white">
       {/* Heading */}
@@ -14,30 +29,32 @@ const RedesignDream = () => {
         We Redesign and Refine Your Dream
       </h2>
 
-      {/* Content */}
+      {/* Loading */}
+      {loading && <p className="text-center text-gray-500">Loading videos...</p>}
+
+      {/* Video Grid */}
       <div className="max-w-7xl mx-auto px-4 grid gap-8 md:grid-cols-2">
-        
-        {/* LEFT VIDEO */}
-        <div className="w-full rounded-lg overflow-hidden shadow-lg">
-          <video
-            src={vedio01}
-            controls
-            className="w-full h-[250px] md:h-[350px] object-cover"
-          />
-        </div>
+        {videos.map((video) => (
+          <div
+            key={video.id}
+            className="w-full rounded-lg overflow-hidden shadow-lg"
+          >
+            <video
+              src={video.video_url}
+              controls
+              className="w-full h-[250px] md:h-[350px] object-cover"
+            />
+          </div>
+        ))}
 
-        {/* RIGHT VIDEO */}
-        <div className="w-full rounded-lg overflow-hidden shadow-lg">
-          <video
-            src={vedio02}
-            controls
-            className="w-full h-[250px] md:h-[350px] object-cover"
-          />
-        </div>
-
+        {!loading && videos.length === 0 && (
+          <p className="col-span-2 text-center text-gray-500">
+            No videos uploaded yet
+          </p>
+        )}
       </div>
     </section>
   );
 };
 
-export default RedesignDream;
+export default VideoGallery;

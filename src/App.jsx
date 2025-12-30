@@ -10,6 +10,7 @@ import Gallery from "./pages/Gallery";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+// import BlogDetail from "./components/BlogDetail"
 
 import Architecture from "./pages/services/Architecture";
 import Interior from "./pages/services/Interior";
@@ -19,9 +20,9 @@ import Property from "./pages/services/Property";
 import MapSanction from "./pages/services/MapSanction";
 import Vastu from "./pages/services/Vastu";
 
-import Renovation from "./pages/services/Renovation";
-import Consultation from "./pages/services/Consultation";
-import UrbanPlanning from "./pages/services/UrbanPlanning";
+// import Renovation from "./pages/services/Renovation";
+// import Consultation from "./pages/services/Consultation";
+// import UrbanPlanning from "./pages/services/UrbanPlanning";
 
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -64,14 +65,14 @@ function App() {
         <Route path="/services/property-management" element={<Property />} />
         <Route path="/services/map-sanction" element={<MapSanction />} />
         <Route path="/services/vastu" element={<Vastu />} />
-        <Route path="/services/renovation-remodeling" element={<Renovation />} />
+        {/* <Route path="/services/renovation-remodeling" element={<Renovation />} />
 <Route path="/services/project-consultation" element={<Consultation />} />
-<Route path="/services/urban-planning" element={<UrbanPlanning />} />
+<Route path="/services/urban-planning" element={<UrbanPlanning />} /> */}
 
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogDetail />} />
+       <Route path="/blog/:id" element={<BlogDetail />} /> {/* ✅ */}
         <Route path="/contact" element={<Contact />} />
 
         <Route path="*" element={<NotFound />} />
