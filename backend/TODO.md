@@ -1,6 +1,0 @@
-- [x] Generate APP_KEY using php artisan key:generate
-- [x] Install Laravel Sanctum: composer require laravel/sanctum
-- [x] Publish Sanctum: php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-- [x] Add HasApiTokens trait to User model (already present)
-- [x] Fix seeders to prevent duplicate entries (already have checks)
-- [x] Run migrations and seeders to test fixes

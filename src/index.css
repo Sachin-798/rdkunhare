@@ -1,0 +1,137 @@
+@import "tailwindcss";
+/* Tailwind imports
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+/* Footer background using your image */
+.footer-bg {
+  background-image: url('/src/assets/Images/pattern.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-color: #0a0a0a;
+}
+
+/* Ensure text is above background */
+.footer-bg * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====== NEW: footer-main typography (applies to main footer columns) ====== */
+.footer-main {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;              /* 500 as requested */
+  color: rgb(157, 157, 157);     /* text color for body text in footer */
+  font-size: 16px;               /* base size */
+  line-height: 30px;             /* line height */
+}
+
+
+/* Smooth fade + slide-up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+
+
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-slide-right {
+  animation: slideInRight 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.animate-text {
+  animation: fadeInScale 0.8s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+
+@keyframes zoomIn {
+  from { transform: scale(1.2); }
+  to { transform: scale(1); }
+}
+.animate-zoom-in {
+  animation: zoomIn 6s ease forwards;
+}
+
+@keyframes zoomOut {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+.animate-zoom-out {
+  animation: zoomOut 6s ease forwards;
+}
+
+@keyframes zoomRotate {
+  from { transform: scale(1.2) rotate(-2deg); }
+  to { transform: scale(1) rotate(0); }
+}
+.animate-zoom-rotate {
+  animation: zoomRotate 6s ease forwards;
+}
+
+/* TEXT */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-left {
+  animation: fadeLeft 1.2s ease forwards;
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-right {
+  animation: fadeRight 1.2s ease forwards;
+}
+
+/* RIGHT IMAGE */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUp 1.4s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slideDown 1.4s ease forwards;
+}
