@@ -91,9 +91,9 @@ const Structure = () => {
 
                     {/* RIGHT CONTENT */}
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                           Structure Design
-                        </h2>
+                        <h1 className="text-3xl md:text-4xl font-bold mb-5">
+                           Structure Design & Structural Engineer in Indore
+                        </h1>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                             The life of any structure relies upon the underlying soundness and strength of the structure. the structure is the principal skeleton of any structure. We fortify the skeleton of your structure.

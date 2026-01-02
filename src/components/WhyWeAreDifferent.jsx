@@ -27,19 +27,17 @@ const WhyWeAreDifferent = () => {
 
         {/* LEFT CONTENT */}
         <div>
-          <h1 className="text-5xl font-bold mb-2">
+          <h2 className="text-5xl font-bold mb-2">
             Why We Are Different
-          </h1>
-
-          <h2 className="text-4xl font-bold mb-6">
-            SINCE WE SIMPLY <br />
-            DON'T PLAN A SPACE
           </h2>
 
+          <h3 className="text-4xl font-bold mb-6">
+            SINCE WE SIMPLY <br />
+            DON'T PLAN A SPACE
+          </h3>
+
           <p className="text-xl text-gray-600 leading-8 mb-10 max-w-xl text-justify">
-            We concentrate on the tale of your life and teach it in your
-            current circumstance to make the space always rousing for you.
-            Our client-focused plan approach.
+            We deal in residential and commercial properties across Vijay Nagar, Nipania, Rau, Ujjain Road, Super Corridor, Kanadia Road, Bengali Square and nearby areas of Indore.
           </p>
 
           {/* ACCORDION */}

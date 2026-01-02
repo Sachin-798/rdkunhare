@@ -3,6 +3,8 @@ import React from "react";
 import Vastu_se from "../../components/Vastu_se"
 import Construction_de from "../../components/Construction_de";
 import { Link } from "react-router-dom";
+import VastuFaq from "../../components/VastuFaq"
+
 
 const Vastu = () => {
   return (
@@ -40,6 +42,7 @@ Vastu
     </section>
 <Vastu_se/>
     <Construction_de/>
+    <VastuFaq/>
     </>
   );
 };

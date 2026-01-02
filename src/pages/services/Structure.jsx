@@ -5,6 +5,7 @@ import React from "react";
 import Construction_de from "../../components/Construction_de";
 import Structure from "../../components/Structure"
 import { Link } from "react-router-dom";
+import StructureFaq from "../../components/StructureFaq" 
 
 const Interior = () => {
   return (
@@ -43,6 +44,7 @@ Structure Design
     </section>
 <Structure/>
 <Construction_de/>
+<StructureFaq />
     </>
   );
 };

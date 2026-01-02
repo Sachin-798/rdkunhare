@@ -92,8 +92,8 @@ const InteriorServices = () => {
 
                     {/* RIGHT CONTENT */}
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                            Interior Design
+                        <h2 className="text-5xl md:text-4xl font-bold mb-5">
+                           Interior Designer in Indore
                         </h2>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">

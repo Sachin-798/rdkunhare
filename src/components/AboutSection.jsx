@@ -39,13 +39,18 @@ export default function AboutSection() {
 
           <div className="max-w-xl mr-auto text-left">
 
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
               ABOUT US
             </h1>
 
-            <h2 className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
-              BANGLOW <br className="hidden sm:block" /> DESIGN
-            </h2>
+            {/* <h3 className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+  BANGLOW DESIGN
+</h3> */}
+            <h3 className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+              Builders Construction Banglow Design Buy & Sell Properties
+            </h3>
+
+
 
 
             <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 italic leading-relaxed text-justify">
@@ -79,7 +84,7 @@ export default function AboutSection() {
                 "
                 style={{ letterSpacing: "1px" }}
               >
-                LEARN MORE
+                Contact Us
               </Link>
 
               {/* UNDERLINE */}

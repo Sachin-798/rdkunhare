@@ -9,16 +9,16 @@ const DesigningSection = () => {
 
                     {/* LEFT CONTENT */}
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6">
                             Designing
-                        </h2>
+                        </h3>
 
-                        <ul className="space-y-4">
+                        <ul className="space-y-2">
                             {[
-                                "Quality Architect Designs",
                                 "Quality Architect Designs",
                                 "Highly Professional Members",
                                 "Deliver Always on Time",
+                            
                                 "Best Value Solutions",
                                 "Professional and Qualified",
                             ].map((item, index) => (

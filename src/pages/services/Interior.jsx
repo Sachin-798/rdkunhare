@@ -3,6 +3,7 @@ import React from "react";
 import ServiceLayout from "../../components/ServiceLayout";
 import InteriorServices from "../../components/InteriorServices"
 import DesigningSection_in from "../../components/DesigningSection_in";
+import InteriorFaq from "../../components/InteriorFaq"
 import { Link } from "react-router-dom";
 
 const Interior = () => {
@@ -41,6 +42,7 @@ const Interior = () => {
     </section>
     <InteriorServices/>
     <DesigningSection_in/>
+    <InteriorFaq />
     </>
   );
 };

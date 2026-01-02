@@ -3,6 +3,7 @@ import Property_in from "../../components/Property_in";
 
 
 import Property_de from "../../components/property_de"
+import PropertyFaq from "../../components/PropertyFaq"
 import { Link } from "react-router-dom";
 
 const Property = () => {
@@ -42,6 +43,7 @@ const Property = () => {
       </section>
       <Property_in />
       <Property_de />
+      <PropertyFaq />
     </>
   );
 };

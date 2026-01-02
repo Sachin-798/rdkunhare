@@ -88,10 +88,10 @@ const ServicesPage = () => {
 
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            Services We Provide
-          </h2>
-          <p className="mt-4 text-gray-600 text-lg md:text-xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Our Services in Indore
+          </h1>
+          <p className="mt-4 text-gray-600 text-xl md:text-2xl">
             We deliver end-to-end solutions with modern design, strong execution,
             and professional expertise.
           </p>
@@ -148,10 +148,10 @@ const ServicesPage = () => {
                 </div>
 
                 {/* TITLE */}
-                <h3
+                <h2
                   className="
-                    text-2xl
-                    md:text-3xl
+                    text-3xl
+                    md:text-4xl
                     font-semibold
                     text-gray-900
                     mb-5
@@ -161,14 +161,14 @@ const ServicesPage = () => {
                   "
                 >
                   {service.title}
-                </h3>
+                </h2>
 
                 {/* DESCRIPTION */}
                 <p
                   className="
                     text-gray-700
-                    text-lg
-                    md:text-xl
+                    text-xl
+                    md:text-2xl
                     leading-relaxed
                     mb-8
                     transition
@@ -186,7 +186,7 @@ const ServicesPage = () => {
                     items-center
                     gap-2
                     text-purple-600
-                    text-xl
+                    text-2xl
                     font-semibold
                     transition
                     duration-300
@@ -194,7 +194,7 @@ const ServicesPage = () => {
                   "
                 >
                   Learn More
-                  <span className="text-3xl">→</span>
+                  <span className="text-4xl">→</span>
                 </div>
               </div>
             </Link>

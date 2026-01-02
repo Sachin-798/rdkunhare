@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  // FiImage,
+  FiImage,
   FiVideo,
   FiLogOut,
   FiMenu,
@@ -11,9 +11,8 @@ import {
 const Sidebar = ({ active, setActive, logout }) => {
   const [open, setOpen] = useState(false);
 
-  // ❌ Dashboard item removed
   const menuItems = [
-    // { key: "image", label: "Image Upload", icon: <FiImage /> },
+    { key: "image", label: "Image Upload", icon: <FiImage /> },
     { key: "video", label: "Video Upload", icon: <FiVideo /> },
     { key: "blog", label: "Upload Blog", icon: <FiEdit3 /> },
   ];
@@ -21,8 +20,8 @@ const Sidebar = ({ active, setActive, logout }) => {
   return (
     <>
       {/* MOBILE TOP BAR */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-40 bg-gray-900 text-white flex items-center justify-between px-4 py-3 shadow">
-        <h1 className="text-lg font-bold">Admin Panel</h1>
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white flex items-center justify-between px-4 py-3 shadow-lg">
+        <h1 className="text-lg font-bold tracking-wide">Admin Panel</h1>
         <button onClick={() => setOpen(true)}>
           <FiMenu className="text-2xl" />
         </button>
@@ -32,35 +31,39 @@ const Sidebar = ({ active, setActive, logout }) => {
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
         />
       )}
 
       {/* SIDEBAR */}
       <aside
         className={`
-          fixed top-0 left-0 h-screen w-64 bg-gray-900 text-white z-40
+          fixed top-0 left-0 z-50
+          w-64 bg-gray-900 text-white
           transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
-          md:translate-x-0 md:static flex flex-col
+          md:translate-x-0 md:static
+          flex flex-col
+          min-h-screen
         `}
       >
         {/* HEADER */}
-        <div className="p-6 border-b border-gray-800 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold">Admin Panel</h1>
-            <p className="text-xs text-gray-400 mt-1">
-              Manage content easily
-            </p>
+        <div className="px-6 py-5 border-b border-gray-800">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-bold">Admin Panel</h1>
+              <p className="text-xs text-gray-400 mt-1">
+                Manage content easily
+              </p>
+            </div>
+            <button className="md:hidden" onClick={() => setOpen(false)}>
+              <FiX className="text-2xl" />
+            </button>
           </div>
-
-          <button className="md:hidden" onClick={() => setOpen(false)}>
-            <FiX className="text-2xl" />
-          </button>
         </div>
 
-        {/* MENU */}
-        <nav className="flex-1 p-4 space-y-2">
+        {/* MENU (auto height + scroll) */}
+        <nav className="flex-1 overflow-y-auto px-4 py-5 space-y-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
           {menuItems.map((item) => (
             <button
               key={item.key}
@@ -70,10 +73,10 @@ const Sidebar = ({ active, setActive, logout }) => {
               }}
               className={`
                 w-full flex items-center gap-3 px-4 py-3 rounded-xl
-                text-sm font-medium transition
+                text-sm font-medium transition-all duration-200
                 ${
                   active === item.key
-                    ? "bg-blue-600 text-white shadow"
+                    ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg scale-[1.02]"
                     : "text-gray-300 hover:bg-gray-800 hover:text-white"
                 }
               `}
@@ -85,10 +88,10 @@ const Sidebar = ({ active, setActive, logout }) => {
         </nav>
 
         {/* LOGOUT */}
-        <div className="p-4 border-t border-gray-800">
+        <div className="px-4 py-4 border-t border-gray-800">
           <button
             onClick={logout}
-            className="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 py-3 rounded-xl"
+            className="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 py-3 rounded-xl font-medium transition"
           >
             <FiLogOut />
             Logout

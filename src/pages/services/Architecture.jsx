@@ -2,6 +2,7 @@ import React from "react";
 
 import ArchitectureSection from "../../components/ArchitectureSection"
 import DesigningSection from "../../components/DesigningSection"
+import ArchitectureFaq from "../../components/ArchitectureFaq"
 import { Link } from "react-router-dom";
 
 
@@ -44,6 +45,7 @@ const Architecture = () => {
       
     <ArchitectureSection/>
       <DesigningSection/>
+      <ArchitectureFaq/>
    
     </>
   );

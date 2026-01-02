@@ -52,9 +52,10 @@ const BlogDetail = () => {
           ← Back
         </button>
 
+        {/* ✅ IMAGE FIXED HERE */}
         <div className="rounded-xl overflow-hidden shadow-lg mb-10 bg-white">
           <img
-            src={blog.image_url}
+            src={blog.image}
             alt={blog.title}
             className="w-full max-h-[450px] object-contain"
           />

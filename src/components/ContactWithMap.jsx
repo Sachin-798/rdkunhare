@@ -79,9 +79,9 @@ const handleSubmit = async (e) => {
             {/* RIGHT: FORM */}
             <div className="lg:col-span-5 flex items-start">
               <div className="w-full">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
                   CONTACT US
-                </h2>
+                </h1>
 
                 <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

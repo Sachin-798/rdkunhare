@@ -1,6 +1,7 @@
 import React from "react";
 import ArchitectureShowcase from "../../components/ArchitectureShowcase"
 import { Link } from "react-router-dom";
+import MapFaq from "../../components/MapFaq"
 
 
 const MapSanction = () => {
@@ -38,6 +39,7 @@ const MapSanction = () => {
       </div>
     </section>
     <ArchitectureShowcase/>
+    <MapFaq />
   
     </>
   );

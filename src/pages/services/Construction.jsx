@@ -3,6 +3,7 @@ import React from "react";
 import ServiceLayout from "../../components/ServiceLayout";
 import Construction from "../../components/Construction"
 import { Link } from "react-router-dom";
+import ConstructionFaq  from "../../components/ConstructionFaq"
 
 
 
@@ -44,6 +45,7 @@ Building & Construction
     </section>
   <Construction/>
 <Construction_de/>
+<ConstructionFaq />
     </>
   );
 };

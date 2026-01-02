@@ -34,7 +34,7 @@ const VideoImageSlider = () => {
   return (
     <div className="relative w-full overflow-hidden">
       {/* HEIGHT CONTROL */}
-      <div className="relative h-[28vh] sm:h-[60vh] md:h-[80vh] lg:h-[100vh] xl:h-[110vh]">
+      <div className="relative h-[28vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh]">
 
 
 

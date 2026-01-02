@@ -36,14 +36,10 @@ const VideoSection = ({ setMessage }) => {
     try {
       setLoading(true);
       await axiosInstance.post("/admin/videos", formData);
-
       setMessage("✅ Video uploaded successfully");
 
-      // ✅ CLEAR STATE + INPUT
       setVideo(null);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
+      if (fileInputRef.current) fileInputRef.current.value = "";
 
       fetchVideos();
     } catch (err) {
@@ -71,7 +67,7 @@ const VideoSection = ({ setMessage }) => {
   return (
     <div className="space-y-10">
       {/* ================= UPLOAD CARD ================= */}
-      <div className="bg-white rounded-2xl shadow p-6 max-w-xl">
+      <div className="bg-white rounded-2xl shadow p-6 max-w-xl w-full">
         <h2 className="text-2xl font-semibold mb-1">Upload Video</h2>
         <p className="text-gray-500 text-sm mb-5">
           Upload service or promotional video
@@ -94,9 +90,9 @@ const VideoSection = ({ setMessage }) => {
         </button>
       </div>
 
-      {/* ================= TABLE ================= */}
+      {/* ================= VIDEO LIST ================= */}
       <div className="bg-white rounded-2xl shadow">
-        <div className="p-5 border-b flex items-center justify-between">
+        <div className="p-5 border-b flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <h3 className="text-xl font-semibold text-gray-800">
             Uploaded Videos
           </h3>
@@ -105,7 +101,8 @@ const VideoSection = ({ setMessage }) => {
           </span>
         </div>
 
-        <div className="overflow-x-auto">
+        {/* ================= DESKTOP TABLE ================= */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead className="bg-gray-50 text-gray-600 uppercase text-xs">
               <tr>
@@ -117,16 +114,8 @@ const VideoSection = ({ setMessage }) => {
             </thead>
 
             <tbody className="divide-y">
-              {videos.length === 0 && (
-                <tr>
-                  <td colSpan="4" className="text-center py-12 text-gray-500">
-                    No videos uploaded yet
-                  </td>
-                </tr>
-              )}
-
               {videos.map((item, index) => (
-                <tr key={item.id} className="hover:bg-gray-50 transition">
+                <tr key={item.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium">{index + 1}</td>
 
                   <td className="px-6 py-4">
@@ -144,7 +133,7 @@ const VideoSection = ({ setMessage }) => {
                   <td className="px-6 py-4 text-center">
                     <button
                       onClick={() => deleteVideo(item.id)}
-                      className="inline-flex items-center gap-1 bg-red-50 text-red-600 hover:bg-red-100 px-4 py-2 rounded-lg text-xs font-semibold transition"
+                      className="bg-red-50 text-red-600 hover:bg-red-100 px-4 py-2 rounded-lg text-xs font-semibold transition"
                     >
                       🗑 Delete
                     </button>
@@ -153,6 +142,37 @@ const VideoSection = ({ setMessage }) => {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* ================= MOBILE CARDS ================= */}
+        <div className="md:hidden divide-y">
+          {videos.map((item) => (
+            <div key={item.id} className="p-4 space-y-3">
+              <video
+                src={item.video_url}
+                controls
+                className="w-full h-48 rounded-lg border"
+              />
+
+              <p className="text-sm text-gray-500">
+                Uploaded on{" "}
+                {new Date(item.created_at).toLocaleDateString()}
+              </p>
+
+              <button
+                onClick={() => deleteVideo(item.id)}
+                className="w-full bg-red-50 text-red-600 hover:bg-red-100 py-2 rounded-lg text-sm font-semibold transition"
+              >
+                🗑 Delete Video
+              </button>
+            </div>
+          ))}
+
+          {videos.length === 0 && (
+            <p className="text-center py-10 text-gray-500">
+              No videos uploaded yet
+            </p>
+          )}
         </div>
       </div>
     </div>

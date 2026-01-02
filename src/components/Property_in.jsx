@@ -94,7 +94,7 @@ const Property_in = () => {
                     {/* RIGHT CONTENT */}
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                            Property Management
+                            Property Management in Indore
                         </h2>
 
                         <p className="text-base md:text-lg text-gray-600 leading-relaxed">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/admin/Sidebar";
-// import ImageSection from "../components/admin/ImageSection";
+import ImageSection from "../components/admin/ImageSection";
 import VideoSection from "../components/admin/VideoSection";
 import BlogSection from "../components/admin/BlogSection";
 
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-        {/* {active === "image" && <ImageSection setMessage={setMessage} />} */}
+        {active === "image" && <ImageSection setMessage={setMessage} />}
         {active === "video" && <VideoSection setMessage={setMessage} />}
         {active === "blog" && <BlogSection setMessage={setMessage} />}
       </div>

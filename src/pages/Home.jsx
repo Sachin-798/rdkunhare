@@ -9,6 +9,7 @@ import WhyWeAreDifferent from "../components/WhyWeAreDifferent"
 import AboutSection from "../components/AboutSection";
 
 import VideoImageSlider from "../components/VideoImageSlider";
+import  FAQSection  from "../components/FAQSection"
 const Home = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const Home = () => {
    
     {/* <Recent/> */}
     <RecentBlog/>
+     <FAQSection />
     <ContactWithMap/>
     </>
   );
